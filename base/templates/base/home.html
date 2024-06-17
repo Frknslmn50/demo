@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Home Template</h1>
+
+<div>
+
+    <div>
+        {% for poem in poems %}
+        <div>
+            <h5>{{poem.id}} -- <a href="{% url 'poem' poem.id %}">{{poem.title}} by {{poem.author}}</a></h5>
+        </div>
+        {% endfor %}
+    </div>      
+</div>
+{% endblock content %}
