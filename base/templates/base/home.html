@@ -4,11 +4,15 @@
 <h1>Home Template</h1>
 
 <div>
+    <a href="{% url 'create-poem' %}"> Create Poem</a>
 
     <div>
         {% for poem in poems %}
         <div>
+            <a href="{% url 'update-poem' poem.id %}">Edit Poem</a>
+            <span>@{{poem.user.username}}</span>
             <h5>{{poem.id}} -- <a href="{% url 'poem' poem.id %}">{{poem.title}} by {{poem.author}}</a></h5>
+            <hr>
         </div>
         {% endfor %}
     </div>      
